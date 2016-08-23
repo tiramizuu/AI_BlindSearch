@@ -34,8 +34,8 @@ public class Puzzle {
 		for(int i = 0 ; i < PUZZLESIZE ; i++)
 			for(int j = 0 ; j < PUZZLESIZE ; j++)
 				if(number[i][j] == ' ') {
-					setHolePositionX(i);
-					holePositionY = j;
+					holePositionX = j;
+					holePositionY = i;
 				}
 	}
 	private void swap(int xpos1,int ypos1,int xpos2,int ypos2) //swap 2 adjacent character
@@ -60,8 +60,8 @@ public class Puzzle {
 	public int getHolePositionX() {
 		return holePositionX;
 	}
-	public void setHolePositionX(int holePositionX) {
-		this.holePositionX = holePositionX;
+	public int getHolePositionY() {
+		return holePositionY;
 	}
 	public void moveHoleUp()
 	{
@@ -146,5 +146,8 @@ public class Puzzle {
 	}
 	public char[][] getNumber() {
 		return number;
+	}
+	public int getPuzzleSize() {
+		return PUZZLESIZE;
 	}
 }
